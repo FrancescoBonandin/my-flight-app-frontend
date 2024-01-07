@@ -18,15 +18,13 @@ export default {
 </script>
 
 <template>
-  <div >
+ 
+  <HeaderComponent />
+
+  <MainComponent />
+
+  <FooterComponent />
     
-    <HeaderComponent />
-  
-    <MainComponent />
-  
-    <FooterComponent />
-    
-  </div>
 </template>
 
 <style lang="scss">

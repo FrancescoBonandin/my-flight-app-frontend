@@ -13,11 +13,11 @@ export default {
 </script>
 
 <template>
-    <main>
-        MAIN
-    </main>
+
+    <router-view></router-view>
+
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 </style>
