@@ -8,8 +8,6 @@
 
             return{
 
-
-
                 airports:null,
                 departureAirport:null,
                 arrivalAirport:null,
@@ -166,8 +164,8 @@
                                 <td>{{ flight.departure_airport.name}}</td>
                                 <td>{{ flight.departure_datetime }}</td>
                                 <td>{{ flight.arrival_airport.name }}</td>
-                                <td> {{ flight.arrival_datetime }}</td>
-                                <td>@mdo</td>
+                                <td>{{ flight.arrival_datetime }}</td>
+                                <td> bottone prenotazione </td>
                             </tr>
 
                         </tbody>
