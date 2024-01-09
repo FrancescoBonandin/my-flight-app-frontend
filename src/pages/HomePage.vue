@@ -143,37 +143,35 @@
                     no available flight
                 </div>
     
-                <div v-for="(flight, key) in results" class="col-12">
-    
-                    <div class="card">
+                <div class="col-12">
 
-                        <div class="col">
-                            
-                            {{ flight.number }}
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>   
+                                <th scope="col">flight number</th>
+                                <th scope="col">departure airport name</th>
+                                <th scope="col">departure datetime</th>
+                                <th scope="col">arrival airport name</th>
+                                <th scope="col">arrival datetime</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
 
-                        </div>
+                        <tbody>
 
-                        <div class="col">
-                            
-                            {{ flight.departure_datetime }}
+                            <tr v-for="(flight, key) in results">
+                                <th scope="row">{{ key+1}}</th>
+                                <td>{{ flight.number }}</td>
+                                <td>{{ flight.departure_airport.name}}</td>
+                                <td>{{ flight.departure_datetime }}</td>
+                                <td>{{ flight.arrival_airport.name }}</td>
+                                <td> {{ flight.arrival_datetime }}</td>
+                                <td>@mdo</td>
+                            </tr>
 
-                        </div>  
-
-                        <div class="col">
-                            
-                            {{ flight.arrival_datetime }}
-
-                        </div>
-
-                        <div class="col">
-                            {{ flight.departure_airport.name}}
-                        </div>
-
-                        <div class="col">
-                            {{ flight.arrival_airport.name }}
-                        </div>
-
-                    </div>
+                        </tbody>
+                    </table>
     
                 </div>
 
