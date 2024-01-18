@@ -12,7 +12,8 @@
                 departureAirport:null,
                 arrivalAirport:null,
                 departureDate:null,
-                results:null
+                results:null,
+                selectedFlight:null
             }
 
         },
@@ -57,21 +58,24 @@
                         'arrival-airport' : this.arrivalAirport,
                         'departure-date' : this.departureDate
                     }
-                    }).then(response=>{
+                }).then(response=>{
                         this.results=response.data.flights
                         console.log(this.results)
-                    })
-                    .catch(error=>{
-                        console.log(error)
-                    })
-                }
+                })
+                .catch(error=>{
+                    console.log(error)
+                })
             },
-            computed:{
-                
-            },
+           
+            
+        },
+        computed:{
+            
+        },
         created(){
             this.getAirports()
-        }
+        },
+       
 
     }
 
@@ -141,7 +145,7 @@
                     no available flight
                 </div>
     
-                <div class="col-12">
+                <div v-else class="col-12">
 
                     <table class="table">
                         <thead>
@@ -152,6 +156,7 @@
                                 <th scope="col">departure datetime</th>
                                 <th scope="col">arrival airport name</th>
                                 <th scope="col">arrival datetime</th>
+                                <th scope="col">available seats</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
@@ -165,7 +170,12 @@
                                 <td>{{ flight.departure_datetime }}</td>
                                 <td>{{ flight.arrival_airport.name }}</td>
                                 <td>{{ flight.arrival_datetime }}</td>
-                                <td> bottone prenotazione </td>
+                                <td>{{ flight.available_seats }}</td>
+                                <td>
+                                    <router-link class="btn btn-success" :to="{name:'ticket', params : { id:flight.id}}">
+                                        tickets
+                                    </router-link>
+                                </td>
                             </tr>
 
                         </tbody>
